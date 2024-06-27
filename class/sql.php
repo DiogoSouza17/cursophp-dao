@@ -22,7 +22,7 @@ class sql extends PDO {
 		$statement->bindParam ($key, $value);
 	}
 
-	public function execquery ($rawQuery, $params = array ()) {
+	public function execQuery ($rawQuery, $params = array ()) {
 
 		// chamei o query. $rawQuery = é query bruta. 
         //$params = dados que estarão na query(independente de qual query seja) 
@@ -38,7 +38,7 @@ class sql extends PDO {
 
 	public function select ($rawQuery, $params = array ()):array {
 
-		$stmt = $this->execquery($rawQuery, $params);
+		$stmt = $this->execQuery($rawQuery, $params);
 
 		return $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
